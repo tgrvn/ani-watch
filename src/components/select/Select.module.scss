@@ -1,0 +1,128 @@
+@import "../../assets/styles/colors";
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  padding: 11px 13px;
+  border-radius: 6px;
+  box-shadow: 0px 14px 30px $box-shadow, 0px 4px 4px $box-shadow;
+  background-color: $whiteout;
+  cursor: pointer;
+
+  .input {
+    width: 100%;
+    background-color: $whiteout;
+    color: $megaman;
+    font-weight: 600;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &:focus::placeholder {
+      color: $whiteout;
+    }
+
+    &::placeholder {
+      font-weight: 600;
+      color: $sweet-blue;
+    }
+  }
+
+  .right {
+    position: relative;
+    width: 13px;
+    cursor: pointer;
+
+    &:hover {
+      &::before {
+        color: $sweet-blue;
+      }
+    }
+
+    &::before {
+      content: "\f078";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: block;
+      font-family: "icomoon";
+      font-size: 14px;
+      font-weight: 400;
+      color: $baywater-blue;
+      transition: all 0.3s;
+    }
+  }
+}
+
+.select {
+  position: relative;
+
+  &:hover {
+    .options {
+      &::-webkit-scrollbar-thumb {
+        background-color: $leadbelcher;
+      }
+    }
+  }
+
+  .options {
+    position: absolute;
+    top: calc(100% + 10px);
+    z-index: 2;
+    padding: 10px;
+    border-radius: 6px;
+    width: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+    box-shadow: 0px 14px 30px $box-shadow, 0px 4px 4px $box-shadow;
+    background-color: $whiteout;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 6px;
+      background-color: $whiteout;
+    }
+
+    .option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      transition: all 0.3s;
+      cursor: pointer;
+
+      .name {
+        font-size: 14px;
+        text-transform: capitalize;
+      }
+
+      .selected {
+        height: 16px;
+        width: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::after {
+          content: "\f058";
+          font-family: "icomoon";
+          font-size: 16px;
+          color: $maya-blue;
+        }
+      }
+
+      &:hover {
+        border-radius: 6px;
+        background-color: $chefs-hat;
+        color: $maya-blue;
+      }
+    }
+  }
+}
