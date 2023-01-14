@@ -1,0 +1,54 @@
+@import "../../../assets/styles/mixins";
+@import "../../../assets/styles/colors";
+
+.filters {
+  display: flex;
+  gap: 0 20px;
+
+  .filter {
+    flex-grow: 1;
+
+    .name {
+      color: $sheet-blue;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.mobile {
+  display: none;
+
+  .primary {
+    display: flex;
+    align-items: flex-end;
+    gap: 0 20px;
+
+    .filter {
+      flex-grow: 1;
+    }
+
+    .switch {
+      background-color: red;
+      height: 22px;
+      width: 22px;
+    }
+  }
+
+  .secondary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0 20px;
+  }
+}
+
+// .wrapper {
+//   @include for-tablet-landscape-up {
+//     .filters {
+//       display: none;
+//     }
+
+//     .mobile {
+//       display: block;
+//     }
+//   }
+// }
